@@ -32,22 +32,58 @@ export class ViewAllEmpComponent {
 
   getDepartmentNames(departmentList:any[]):string{
     return departmentList.map(dept=>dept.name).join('  , ');
-    
+  
   }
 
   loadEmployeTable(){
-
-
     this.http.get("http://localhost:8080/employees").subscribe(res=>{
         this.employeeList=res;
         console.log(res)
-
       })
-  
 
   }
-  deleteEmployee(employee:any){
+  updateEmployee(employee:any){
 
+
+
+    if(employee!=null){
+      this.selectedEmployee=employee;
+    }
+    console.log(employee);
+    
+      }
+    
+      saveUpdateEmployee(){
+        Swal.fire({
+          title: "Do you want to save the changes?",
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: "Save",
+          denyButtonText: `Don't save`
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+    
+    
+            this.http.put(`http://localhost:8080/employees/${this.selectedEmployee.id}`, this.selectedEmployee)
+      .subscribe(res => {
+        console.log(res);   
+        this.loadEmployeTable();
+      });
+    
+    
+    
+            Swal.fire("Saved!", "", "success");
+          } else if (result.isDenied) {
+            Swal.fire("Changes are not saved", "", "info");
+          }
+        });
+    
+    
+    
+    
+      }
+  deleteEmployee(employee:any){
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -73,45 +109,5 @@ export class ViewAllEmpComponent {
     });
   }
 
-  updateEmployee(employee:any){
 
-
-
-if(employee!=null){
-  this.selectedEmployee=employee;
-}
-console.log(employee);
-
-  }
-
-  saveUpdateEmployee(){
-    Swal.fire({
-      title: "Do you want to save the changes?",
-      showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: "Save",
-      denyButtonText: `Don't save`
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
-
-
-        this.http.put(`http://localhost:8080/employees/${this.selectedEmployee.id}`, this.selectedEmployee)
-  .subscribe(res => {
-    console.log(res);   
-    this.loadEmployeTable();
-  });
-
-
-
-        Swal.fire("Saved!", "", "success");
-      } else if (result.isDenied) {
-        Swal.fire("Changes are not saved", "", "info");
-      }
-    });
-
-
-
-
-  }
 }

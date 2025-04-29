@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './common/nav/nav.component';
 import { AddEmployeeComponent } from "./pages/add-employee/add-employee.component";
-import { ViewAllEmpComponent } from './pages/view-all-emp/view-all-emp.component';
+import { ViewAllEmpComponent } from './view-all-emp/view-all-emp.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavComponent, ViewAllEmpComponent],
+  imports: [RouterOutlet, NavComponent,ViewAllEmpComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
