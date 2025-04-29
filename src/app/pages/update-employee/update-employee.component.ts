@@ -41,6 +41,7 @@ export class UpdateEmployeeComponent {
       this.name = this.getorder.name
       this.email = this.getorder.email
       this.department = this.getorder.department
+      this.selectedEmployee.createAt=this.getorder.createAt
     })
   }
 
