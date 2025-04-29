@@ -7,7 +7,7 @@ import { ViewAllEmpComponent } from './view-all-emp/view-all-emp.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavComponent,ViewAllEmpComponent],
+  imports: [RouterOutlet, NavComponent,ViewAllEmpComponent,AddEmployeeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

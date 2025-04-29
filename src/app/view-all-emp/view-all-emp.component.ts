@@ -3,10 +3,11 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { NavComponent } from "../common/nav/nav.component";
 
 @Component({
   selector: 'app-view-all-emp',
-  imports: [HttpClientModule,FormsModule,CommonModule],
+  imports: [HttpClientModule, FormsModule, CommonModule, NavComponent],
   templateUrl: './view-all-emp.component.html',
   styleUrl: './view-all-emp.component.css'
 })

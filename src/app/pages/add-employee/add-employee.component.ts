@@ -3,10 +3,11 @@ import { HttpClient, HttpClientJsonpModule, HttpClientModule, HttpHeaders } from
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { NavComponent } from '../../common/nav/nav.component';
 
 @Component({
   selector: 'app-add-employee',
-  imports: [FormsModule,CommonModule,HttpClientModule],
+  imports: [FormsModule,CommonModule,HttpClientModule,NavComponent],
   templateUrl: './add-employee.component.html',
   styleUrl: './add-employee.component.css'
 })
