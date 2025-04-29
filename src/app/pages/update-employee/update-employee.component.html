@@ -1,1 +1,65 @@
-<p>update-employee works!</p>
+<app-nav></app-nav>
+
+<div class="justify-content">
+    <div class="content-box">
+
+
+        <div class="modal-content border-primary">
+            <div class="modal-header bg-primary text-white">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Update Employee</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+        
+              <div class="mb-3">
+                <label for="emp-id" class="col-form-label">ID:</label>
+                <input type="text" class="form-control" id="emp-id"  [(ngModel)]="selectedEmployee.id">
+              </div>
+
+              <button type="button" class="btn btn-primary" (click)="FindOrder()">serch order</button>
+              
+              <table class="table border ">
+                <tr class="boeder text-center bg-black text-white">
+                  <th>name</th>
+                  <th>email</th>
+                  <th>department</th>
+                  <th></th>
+                </tr>
+          
+                <tr>
+          
+                  <td>{{name}}</td>
+                  <td>{{email}}</td>
+                  <td>{{department}}</td>
+                 
+          
+                </tr>
+          
+              </table>
+
+              <div class="input-group mb-3">
+                <label for="emp-name" class="col-form-label"> Name:</label>
+                <input type="text" class="form-control" id="emp-name" [(ngModel)]="selectedEmployee.name">
+              </div>
+        
+              <div class="mb-3">
+                <label for="emp-email" class="col-form-label">Email:</label>
+                <input type="text" class="form-control" id="emp-email" [(ngModel)]="selectedEmployee.email">
+              </div>
+        
+              <div class="mb-3">
+                <label for="emp-dept" class="col-form-label">Department:</label>
+                <input type="text" class="form-control" id="emp-dept" [(ngModel)]="selectedEmployee.department">
+              </div>
+        
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button (click)="saveUpdateEmployee()" type="button" class="btn btn-success">Update Data</button>
+            </div>
+          </div>
+
+
+    </div>
+  </div>
+  

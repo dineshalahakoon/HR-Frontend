@@ -4,10 +4,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { NavComponent } from "../../common/nav/nav.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-view-all-emp',
-  imports: [HttpClientModule, FormsModule, CommonModule, NavComponent],
+  imports: [HttpClientModule, FormsModule, CommonModule, NavComponent,RouterLink],
   templateUrl: './view-all-emp.component.html',
   styleUrl: './view-all-emp.component.css'
 })
@@ -31,10 +32,7 @@ export class ViewAllEmpComponent {
 
 
 
-  getDepartmentNames(departmentList: any[]): string {
-    return departmentList.map(dept => dept.name).join('  , ');
 
-  }
 
   loadEmployeTable() {
     this.http.get("http://localhost:8080/employees").subscribe(res => {
