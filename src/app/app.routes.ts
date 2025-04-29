@@ -18,6 +18,10 @@ export const routes: Routes = [
         path:"update-employee",
         component:UpdateEmployeeComponent
         
+       },
+       {
+        path:"",
+        component:AddEmployeeComponent
        }
 
        
