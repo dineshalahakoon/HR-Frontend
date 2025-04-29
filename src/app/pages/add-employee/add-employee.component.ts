@@ -30,6 +30,16 @@ export class AddEmployeeComponent {
 
 console.log(this.employee);
 
-this.http.post("http://localhost:8080/employees" ,this.employee,).subscribe()
+this.http.post("http://localhost:8080/employees" ,this.employee,).subscribe(
+  (data)=>{
+    Swal.fire({
+      title: "success!",
+      icon: "success",
+     
+    });
+    
+   
+  }
+)
   }
 }
