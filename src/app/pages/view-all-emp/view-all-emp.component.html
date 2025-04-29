@@ -22,7 +22,7 @@
         <td>{{ employee.email }}</td>
         <td>{{ employee.department }}</td>
         <td>{{ employee.createAt }}</td>
-        <td>{{ employee.updatedAt }}</td>
+        <td>{{ employee.uplordAt }}</td>
         <td>
           <button class="btn btn-danger" (click)="deleteEmployee(employee)">
             delete
@@ -54,7 +54,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="emp-name" class="col-form-label">First Name:</label>
+          <label for="emp-name" class="col-form-label"> Name:</label>
           <input type="text" class="form-control" id="emp-name" [(ngModel)]="selectedEmployee.name">
         </div>
 
